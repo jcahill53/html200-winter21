@@ -2,7 +2,6 @@ let planets = ['Mercury', 'Venus','Earth', 'Mars', 'Jupiter' ];
 
 console.log(planets);
 
-// can chain multiple values by adding .push
 planets.push('Saturn');
 console.log(planets);
 
