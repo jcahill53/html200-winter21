@@ -1,10 +1,10 @@
 
-function cubeNumber() {
+function squareNumber() {
 
-let number = prompt("Enter a number to be cubed:");
+let number = prompt("Enter a number to be squared:");
 
-function cuber(numberToCube) {
-return numberToCube * numberToCube;
+function squarer(numberToSquare) {
+return numberToSquare * numberToSquare;
 }
-alert( "The cube value of your number is:" + cuber(number));
+alert( "The Square value of your number is:" + squarer(number));
 }
