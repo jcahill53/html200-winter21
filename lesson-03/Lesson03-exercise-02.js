@@ -1,8 +1,9 @@
-let arr = [['I','have', 'studied', 'many', 'times','the', 'marble',  'that',  'was', 'chisled', 'for', 'me'],['.']]
+let str = 'I have studied many times the marble that was chisled for me.'
 
-console.log(arr);
-
-let str = arr[0].join(' ') + arr[1];
 console.log(str);
 
-console.log(arr[0][2]);
+let arr = str.split(' ');
+console.log(arr);
+
+let arr1 = arr.splice(2, 1);
+console.log(arr1);
