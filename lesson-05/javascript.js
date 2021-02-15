@@ -12,18 +12,40 @@ function bankApp() {
            
             case 'W': 
             let withdrawal =  prompt("Enter a dollar amount to withdraw");   
-            balance = (balance - Number(withdrawal));
-            alert("Your new balance is: $"  + balance);
+            if ((balance - Number(withdrawal)) <= 0) {
+                alert("You have insufficient funds to proceed with this withdrawal.  Please select another action.");
+              } else if ((balance - Number(withdrawal)) <= 300) {
+                let proceed = prompt("The withdrawal will reduce your balance to $300 or less.  Enter Y to proceed or N to select another action.");
+                if (proceed = ' Y') {
+                    balance = (balance - Number(withdrawal));
+                    alert("Your new balance is: $"  + balance);
+                  } else {
+                   alert ('Your withdrawal has been cancelled.  Please select another action.')
+                  }
+              } else {
+                balance = (balance - Number(withdrawal));
+                alert("Your new balance is: $"  + balance);
+              }        
             break;
         
             case 'D': 
             let deposit =  prompt("Enter a dollar amount to deposit");
-            balance = (balance + Number(deposit));   
-            alert("Your new balance is: $" + balance);
+            if (Number(deposit)>50000) {
+                alert ("Deposits may not exceed $50,000.  Please select another action.")
+              } else {
+                balance = (balance + Number(deposit));   
+                alert("Your new balance is: $" + balance);
+              }
+            
             break;
 
             case  'B':
-            alert("Your current balance is: $"  + balance);
+                if (balance <=300) {
+                    alert("WARNING:  Your current balance is: $"  + balance +" and is below the recommended minimum balance. ");
+                  } else {
+                    alert("Your current balance is: $"  + balance);
+                  }
+            
             break;
 
             default: 
